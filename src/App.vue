@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" alt="logo">
-    <batalla />
+    <!--<batalla />--->
+    <usuario_A />
   </div>
 </template>
 
 <script>
-import batalla from './components/batalla.vue'
+//import batalla from './components/batalla.vue'
+import usuario_A from './components/usuario_A.vue'
 
 export default {
   name: 'App',
   components: {
-    batalla
+    //batalla,
+    usuario_A
   }
 }
 </script>
