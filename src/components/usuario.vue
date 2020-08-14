@@ -1,20 +1,26 @@
 <template>
     
-    <div class="tabla yellow lighten-3 col s4 m4 offset-m1">
-        <p>Buscar: <input class="it" v-model='usuario' /><a class="waves-effect waves-light orange" @click="cargarDatos">Buscar</a> </p>
+    <b-container class="tabla">
+        <b-row>               
+            <b-form-input state="false" v-model="usuario" placeholder="Usuario"></b-form-input>
+        </b-row>
+        <b-row>
+            <b-button variant="danger" size="sm" class="btn" @click="cargarDatos">Buscar:</b-button> 
+        </b-row>
 
-        <p><i class="material-icons">account_circle</i> Usuario: {{usuario}}</p>
-        <p><i class="material-icons">next_week</i> Repositorios: {{repositorio}}</p>
-        <p><i class="material-icons">face</i> Seguidores: {{seguidores}}</p>
-        <p><i class="material-icons">directions_run</i> Siguiendo: {{sigue}}</p>
-        <p> <i class="material-icons">device_hub</i> Gists Públicos: {{gists}}</p>
-        
-        <h5 class="fin">Puntaje Total: {{Puntaje}}</h5>               
-
-        <div class="img_gallery">
+        <b-row><b-icon icon="person-circle" class="idiot"></b-icon> Usuario: {{usuario}}</b-row>
+        <b-row><b-icon icon="folder-fill" class="idiot"></b-icon> Repositorios: {{repositorio}} </b-row>
+        <b-row><b-icon icon="people-fill" class="idiot"></b-icon>Seguidores: {{seguidores}} </b-row>
+        <b-row><b-icon icon="arrow-up-right-circle-fill" class="idiot"></b-icon>Siguiendo: {{sigue}} </b-row>
+        <b-row><b-icon icon="patch-check-fll" class="idiot"></b-icon>Gists Públicos: {{gists}} </b-row>
+            
+        <b-row><h5 class="fin">Puntaje Total: {{Puntaje}}</h5></b-row>
+        <b-row></b-row>
+        <b-row class="img_gallery">
             <img v-for="(seguidor, i) in lista_gente" :key="i" :src="seguidor.avatar_url" alt="">
-        </div>
-    </div>
+        </b-row>
+    
+    </b-container>
 
     
 </template>
@@ -76,31 +82,36 @@ export default {
 
 <style scoped>
 
+
 .tabla{
-  display:inline-block;
+  display:block;
+  width:30%;
   border:2px solid #c62828;
   text-align: center;
-  font-size: 20px;
-  margin-bottom:15px;
-  padding-bottom:10px; 
-  margin-top:-10px;
+  padding: 20px 50px 10px 50px;
+  margin-top:20px;
 }
 
-.it{
+.idiot{
     display:inline-block;
-    background-color: white;
+    font-size:1.6em;
+    margin:10px 10px;
     text-align: center;
-    width:50%;
 }
-.img_gallery img{
-    display:inline-block;
+
+.btn {
+    margin: 8px auto;
+}
+.img_gallery img{    
     margin:5px;
     padding:2px;
     max-width: 50px;
 }
 
 .fin{
-    font-size: 24px;
+    font-size: 18px;
+    font-weight:bold;
     color: #c62828;
+    margin-left:120px;
 }
 </style>

@@ -1,15 +1,15 @@
 <template>
-  <div id="app">
-    <img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" alt="logo">
-    <h2 red align-center>Bienvenido a GitHub Battle</h2>
+  <b-container>
+    <img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" alt="logo" class="img">
+    <h2>Bienvenido a GitHub Battle</h2>
 
-    <div class="row">
+    <b-row>
       <usuario user="1"/>
       <usuario user="2"/>
-    </div>
+    </b-row>
 
-    <a class="waves-effect waves-light red" @click="compararPuntajes">Battle!</a>
-  </div>
+    <b-row> <b-button variant="danger" class="btn" @click="compararPuntajes">Battle!</b-button></b-row>
+  </b-container>
 </template>
 
 <script>
@@ -43,52 +43,36 @@ export default {
 </script>
 
 <style>
-#app {
+b-container {
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 30px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  font-size:30px;
   color: #2c3e50;
   margin-top: 60px;
   margin-bottom:50px;
 }
 
+b-row .row{
+  margin-right:10px;
+}
+
 img{
   max-width: 120px;
-  margin-top:-60px;
+  margin:4px 43%;
+}
+
+h2, h5 {
+  text-align:center;
 }
 
 h6{
   font-size:20px;
-  color:crimson
+  color:crimson;
+  text-align:center;
 }
 
-h2{
-  margin-top:-10px;
-}
-
-.row{
-  position:relative;
-  margin-left:10%;
-}
-
-.red, .orange{
-    display:block;
-    margin: 0 auto; 
-    font-size:18px;    
-    height:30px;
-    padding-top:3px;
-    width:130px;
-    border:none;
-    border-radius: 150px;
-    color:white;
-}
-
-.red{
-  height:40px;
-  padding-top:5px;
-  font-size:24px;
+.btn {
+  margin:30px auto;
 }
 
 </style>
